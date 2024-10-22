@@ -55,6 +55,7 @@
     <string name="app_name">YourAppName</string>
     <string name="facebook_app_id">YOUR_FACEBOOK_APP_ID</string>
 </resources>
+
 将 YOUR_FACEBOOK_APP_ID 替换为你在 Facebook 开发者平台上获得的实际 App ID。
 
 步骤 4: 添加 Facebook SDK 依赖项
@@ -98,21 +99,26 @@ public class MainActivity extends AppCompatActivity {
 1. 生成开发密钥哈希
 您可以使用 keytool 命令生成密钥哈希。该命令包含在 JDK 中。在终端中运行以下命令：
 
-bash
+bash：
 keytool -exportcert -alias your_debug_key_alias -keystore path_to_your_debug_keystore | openssl sha1 -binary | openssl base64
+
 your_debug_key_alias：通常对于调试构建是 androiddebugkey，但您可以在您的密钥库中检查具体的别名。
 path_to_your_debug_keystore：对于调试构建，通常位于 ~/.android/debug.keystore。
+
 默认情况下，调试密钥库的密码是 android。
 
 例如，对于默认调试密钥库，您可以使用以下命令：
 
-bash
+bash：
 keytool -exportcert -alias androiddebugkey -keystore ~/.android/debug.keystore | openssl sha1 -binary | openssl base64
+
 2. 生成发布密钥哈希
 对于发布密钥，您需要使用用于签名应用的密钥库。命令与调试密钥类似：
 
-bash
+bash：
+
 keytool -exportcert -alias your_release_key_alias -keystore path_to_your_release_keystore | openssl sha1 -binary | openssl base64
+
 请将 your_release_key_alias 和 path_to_your_release_keystore 替换为您的实际值。
 
 第二步：将密钥哈希添加到 Facebook 应用
@@ -127,6 +133,7 @@ keytool -exportcert -alias your_release_key_alias -keystore path_to_your_release
 
 Facebook 登录：尝试在您的应用中使用 Facebook 登录，看看是否成功。
 Logcat：检查 Logcat 中的任何错误，这可能表明密钥哈希存在问题。
+
 密钥哈希示例
 生成密钥哈希后，它看起来可能类似于以下内容：
 
