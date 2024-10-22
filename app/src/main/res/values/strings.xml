@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">DEMO</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <!-- facebook string -->
+    <string name="facebook_app_id">7920198694748986</string>
+    <string name="fb_login_protocol_scheme">fb1234</string>
+    <string name="facebook_client_token">1973a0aa80832a2b2a1f133bf9c6c15f</string>
+</resources>
